@@ -1,38 +1,11 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><title>V2S系统应用</title><script>var win = window;
-    var doc = document;
-    var docEle = doc.documentElement;
-    var metaEle = doc.createElement('meta');
-    var isMobile = /AppleWebKit.*Mobile.*/.test(navigator.userAgent)
-    var setRemUnit = function () {
-      var rootValue = docEle.clientWidth / 3.75;
-      docEle.style.fontSize = (rootValue > 100 && !isMobile ? 100 : rootValue) + 'px';
-    };
-    if (!isMobile) {
-      setRemUnit();
-    } else {
-      win.addEventListener('resize', setRemUnit);
-      win.addEventListener('pageshow', function (e) {
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,minimum-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,viewport-fit=cover"><title>逸理财</title><script>addEventListener('resize', setRemUnit);
+      addEventListener('pageshow', function (e) {
         e.persisted && setRemUnit();
       });
-      var hairLines = function () {
-        var dpr = win.devicePixelRatio || 1;
-        if (dpr >= 2) {
-          var fakeBody = doc.createElement('body');
-          var ele = doc.createElement('div');
-          ele.style.border = '.5px solid transparent';
-          fakeBody.appendChild(ele);
-          docEle.appendChild(fakeBody);
-          if (ele.offsetHeight === 1) {
-            docEle.classList.add('hairlines');
-          }
-          docEle.removeChild(fakeBody);
-        }
-      };
-      var setMeta = function () {
-        metaEle.setAttribute('content', 'width=device-width,minimum-scale=1.0,maximum-scale=1.0,shrink-to-fit=no,user-scalable=no,viewport-fit=cover');
-        metaEle.setAttribute('name', 'viewport');
-        doc.head.appendChild(metaEle);
-      };
-      hairLines();
-      setMeta();
-    }</script><link href=/static/css/app.b641da6ca77da81d96b262a5f911455d.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.d7b598e8b9292187a95a.js></script><script type=text/javascript src=/static/js/vendor.a5550403a2c1d94b782f.js></script><script type=text/javascript src=/static/js/app.aa241afb38747425739f.js></script></body></html>
+      setRemUnit();
+
+      function setRemUnit() {
+        var docEle = document.documentElement;
+        var rootValue = docEle.clientWidth / 3.6;
+        docEle.style.fontSize = rootValue + 'px';
+      }</script><link href=./static/css/app.ac08e32847f4672a76ee76ad0eb0087b.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.2ae2e69a05c33dfc65f8.js></script><script type=text/javascript src=./static/js/vendor.fecba80abecd9f9c28a0.js></script><script type=text/javascript src=./static/js/app.f9a4f4fff6e6717a82ff.js></script></body></html>
